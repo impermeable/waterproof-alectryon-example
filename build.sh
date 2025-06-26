@@ -16,5 +16,5 @@ block {lines[count++] = $0; content = content $0}
 sed -z 's/```{coq}\nQed./```{coq}\nAdmitted./g' waterproof_tutorial_modified2.mv > waterproof_tutorial_final.mv
 
 
-alectryon --frontend md --output-directory _site waterproof_tutorial_final.mv
+./alectryon_waterproof.py --frontend md --output-directory _site waterproof_tutorial_final.mv
 mv _site/waterproof_tutorial_final.mv.html _site/index.html
