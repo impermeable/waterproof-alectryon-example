@@ -29,8 +29,6 @@ Notation "'min(' x , y )" := (Rmin x y)
 ```
 </hint># 1. We conclude that
 
-$\int_0^4x^2dx$
-
 ## Example:
 ```coq
 Lemma example_reflexivity :
