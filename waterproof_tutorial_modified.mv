@@ -20,12 +20,16 @@ Open Scope R_scope.
 Open Scope subset_scope.
 Set Default Goal Selector "!".
 
+Set Nested Proofs Allowed.
+
 Notation "'max(' x , y )" := (Rmax x y)
   (format "'max(' x ,  y ')'").
 Notation "'min(' x , y )" := (Rmin x y)
   (format "'min(' x ,  y ')'").
 ```
 </hint># 1. We conclude that
+
+$\int_0^4x^2dx$
 
 ## Example:
 ```coq
@@ -183,7 +187,7 @@ Lemma example_assumptions_2 :
     a < 0 ⇒ - a > 0.
 Proof.
 Take a ∈ (ℝ).
-Assume that (a < 0) as (i). (* The label here is optional *)
+Assume that (a < 0) (i). (* The label here is optional *)
 By (i) we conclude that (- a > 0).
 Qed.
 ```
@@ -295,7 +299,7 @@ Lemma example_use_for_all :
        x + 1/2 < 1.
 Proof.
 Take x ∈ ℝ.
-Assume that (∀ ε > 0, x < ε) as (i).
+Assume that (∀ ε > 0, x < ε) (i).
 Use ε := (1/2) in (i).
 * Indeed, (1 / 2 > 0).
 * It holds that  (x < 1 / 2).
@@ -328,7 +332,7 @@ Lemma example_use_there_exists :
       10 < x.
 Proof.
 Take x ∈ ℝ.
-Assume that (∃ y > 10, y < x) as (i).
+Assume that (∃ y > 10, y < x) (i).
 Obtain such a y.
 We conclude that (& 10 < y < x).
 Qed.
@@ -341,7 +345,7 @@ Lemma example_use_there_exists_2 :
       12 < x.
 Proof.
 Take x ∈ ℝ.
-Assume that (∃ y > 14, y < x) as (i).
+Assume that (∃ y > 14, y < x) (i).
 Obtain y according to (i).
 We conclude that (& 12 < y < x).
 Qed.
@@ -372,7 +376,7 @@ Lemma example_contradicition :
       x ≥ 1.
 Proof.
 Take x ∈ (ℝ).
-Assume that (∀ ε > 0, x > 1 - ε) as (i).
+Assume that (∀ ε > 0, x > 1 - ε) (i).
 We need to show that (x ≥ 1).
 We argue by contradiction.
 Assume that (¬ (x ≥ 1)).
