@@ -13,7 +13,7 @@ block && /^```$/ {
 block {lines[count++] = $0; content = content $0}
 !block {print}
 ' waterproof_tutorial_tmp.mv > waterproof_tutorial_modified2.mv
-sed -z 's/```{coq}\nQed./```{coq}\nAbort./g' waterproof_tutorial_modified2.mv > waterproof_tutorial_final.mv
+sed -z 's/```{coq}\nQed./```{coq}\nAdmitted./g' waterproof_tutorial_modified2.mv > waterproof_tutorial_final.mv
 
 
 alectryon --frontend md --output-directory _site waterproof_tutorial_final.mv
